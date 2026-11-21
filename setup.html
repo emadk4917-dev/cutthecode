@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Claude Content Machine Setup (free) | Cut The Code</title>
+<meta name="description" content="My entire Claude content machine setup: how one AI skill writes, voices, animates and posts short-form videos. Free guide + 6 prompts.">
+<meta property="og:title" content="The Claude Content Machine Setup (free)">
+<meta property="og:description" content="How one Claude skill makes and posts short-form videos. Free setup guide.">
+<meta property="og:image" content="og.jpg">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;800&display=swap">
+<style>
+
+:root{--cobalt:#2340FF;--cobalt2:#5B74FF;--ink:#0B1033;--deep:#070A22;--paper:#F5F6FF;--bg:#F3F4FC;--marker:#FFE14D;--muted:#59607F;--line:#E2E5F5;--green:#18B46B;--red:#FF4D5E}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(35,64,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(35,64,255,.045) 1px,transparent 1px);background-size:56px 56px}
+a{color:var(--cobalt)}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.mono{font-family:'JetBrains Mono',monospace}
+/* nav */
+nav{padding-block:18px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo .mk{width:44px;height:44px;border-radius:12px;background:linear-gradient(145deg,#3352FF,#1B30D6);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:800;color:#fff;font-size:17px;letter-spacing:-2px}
+.logo .mk b{color:var(--marker)}
+.logo span{font-family:Anton,sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:1px}
+.navcta{font-weight:800;font-size:15px;background:var(--ink);color:#fff;text-decoration:none;padding:10px 18px;border-radius:99px}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start;padding-block:36px 70px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px 6px 8px;font-weight:700;font-size:14px;color:var(--muted)}
+.eyebrow b{background:var(--marker);color:var(--ink);border-radius:99px;padding:2px 10px;font-weight:900;font-size:12px;letter-spacing:1px}
+h1{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,6vw,80px);line-height:1.2;letter-spacing:.5px;margin:22px 0 0;text-wrap:balance}
+h1 mark{background:var(--marker);color:var(--ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.sub{font-size:20px;color:#3A4166;margin:22px 0 0;max-width:34em}
+.points{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.points li{display:flex;gap:12px;align-items:flex-start;font-weight:600}
+.points i{flex:none;width:26px;height:26px;border-radius:8px;background:var(--cobalt);color:#fff;font-style:normal;font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.proof{display:flex;align-items:center;gap:12px;margin-top:28px;font-size:14px;color:var(--muted);font-weight:600}
+.proof .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(24,180,107,.15)}
+.getbox{padding:24px 26px 26px;display:grid;gap:16px}
+.inside{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-weight:600;font-size:16px}
+.inside i{font-style:normal;display:inline-flex;width:24px;height:24px;border-radius:7px;background:var(--marker);color:var(--ink);align-items:center;justify-content:center;font-weight:900;margin-right:10px;font-size:13px}
+.getbtn{font-weight:900;font-size:19px;border-radius:16px;padding:19px;background:var(--ink);color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .1s,background .15s}
+.getbtn:hover{background:#151C4D}.getbtn:active{transform:scale(.98)}
+.getbtn .arr{background:var(--marker);color:var(--ink);border-radius:8px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center}
+.getbox .fine{margin:-4px 0 0;text-align:center;font-weight:700;font-size:14px;color:var(--muted,#59607F)}
+.consentnote{margin:0;font-size:12.5px;line-height:1.5;color:#7A80A3;text-align:center}
+/* form card */
+.formcard{background:#fff;border-radius:28px;box-shadow:0 40px 90px rgba(25,35,110,.16),0 2px 6px rgba(25,35,110,.06);border:1px solid rgba(11,16,51,.06);overflow:hidden;position:relative}
+.formcard .top{background:linear-gradient(135deg,var(--cobalt),var(--cobalt2));color:#fff;padding:22px 26px;display:flex;align-items:center;gap:16px}
+.formcard .pdf{width:54px;height:76px;border-radius:6px;background:url(setup-cover.png) center/cover no-repeat;flex:none;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.formcard .top h2{margin:0;font-size:20px;font-weight:900;line-height:1.25}
+.formcard .top p{margin:2px 0 0;font-size:14px;opacity:.9;font-weight:600}
+form{padding:24px 26px 26px;display:grid;gap:18px}
+label,.lbl{font-weight:800;font-size:14px;display:block;margin-bottom:8px}
+.lbl small,label small{font-weight:600;color:var(--muted)}
+input[type=text],input[type=email],textarea{width:100%;font:inherit;font-size:16px;padding:14px 16px;border:2px solid var(--line);border-radius:14px;background:#FAFBFF;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
+input:focus,textarea:focus{border-color:var(--cobalt);box-shadow:0 0 0 4px rgba(35,64,255,.12)}
+textarea{min-height:84px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;border:2px solid var(--line);background:#FAFBFF;border-radius:99px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;user-select:none;transition:all .12s}
+.chip input:checked+span{border-color:var(--cobalt);background:#EEF1FF;color:var(--cobalt)}
+.chip input:focus-visible+span{box-shadow:0 0 0 4px rgba(35,64,255,.2)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);font-weight:500;line-height:1.45}
+.consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--cobalt);flex:none}
+button{font:inherit;font-weight:900;font-size:18px;border:0;border-radius:16px;padding:18px;background:var(--ink);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .1s,background .15s}
+button:hover{background:#151C4D}button:active{transform:scale(.98)}
+button .arr{background:var(--marker);color:var(--ink);border-radius:8px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center}
+.fine{font-size:12px;color:var(--muted);text-align:center;margin:-6px 0 0}
+.err{color:var(--red);font-weight:700;font-size:14px;display:none}
+.done{display:none;padding:34px 28px 30px;text-align:center}
+.done .tick{width:72px;height:72px;border-radius:50%;background:var(--green);color:#fff;font-size:38px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.done h3{font-size:26px;margin:0 0 8px;font-weight:900}
+.done p{margin:0 0 18px;color:#3A4166}
+.done a.btn{display:inline-flex;align-items:center;gap:10px;background:var(--cobalt);color:#fff;text-decoration:none;font-weight:900;padding:14px 22px;border-radius:14px}
+/* sections */
+section{padding-block:70px}
+.kicker{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:13px;letter-spacing:3px;color:var(--cobalt);text-transform:uppercase}
+h2.big{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(36px,4.6vw,58px);line-height:1.1;margin:10px 0 0;text-wrap:balance}
+h2.big mark{background:var(--marker);padding:0 .1em}
+.lead{font-size:19px;color:#3A4166;max-width:40em;margin:16px 0 0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.card{background:#fff;border-radius:22px;border:1px solid var(--line);padding:26px;box-shadow:0 14px 34px rgba(25,35,110,.07)}
+.card .n{font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--cobalt);font-size:14px}
+.card h3{margin:8px 0 6px;font-size:20px;font-weight:900}
+.card p{margin:0;color:#3A4166;font-size:16px}
+.prompt{margin-top:14px;background:var(--ink);color:#E6E9FF;border-radius:14px;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.55}
+.prompt b{color:var(--marker)}
+/* dark band */
+.dark{background:radial-gradient(ellipse at 75% 30%,#1E2C9E 0%,#0E1550 40%,var(--deep) 80%);color:var(--paper);border-radius:32px;padding:60px 54px;position:relative;overflow:hidden}
+.dark .kicker{color:var(--marker)}
+.dark .lead{color:#C9CFF5}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+.vs div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:22px 24px}
+.vs h4{margin:0 0 10px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:2px;color:#AEB4E0}
+.vs ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.vs .us h4{color:var(--marker)}
+.maths{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.maths div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center}
+.maths b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:40px;line-height:1.1;color:var(--cobalt)}
+.maths span{font-size:14px;color:var(--muted);font-weight:700}
+.small{font-size:13px;color:var(--muted);margin-top:14px}
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-top:12px}
+summary{font-weight:800;cursor:pointer}
+details p{margin:10px 0 0;color:#3A4166}
+.final{text-align:center}
+.final a{display:inline-flex;margin-top:26px;background:var(--ink);color:#fff;text-decoration:none;font-weight:900;font-size:18px;padding:18px 28px;border-radius:16px;gap:10px;align-items:center}
+footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:26px;padding-block:20px 50px}.points,.proof{display:none}.sub{font-size:17px;margin-top:14px}.grid3{grid-template-columns:1fr}.vs{grid-template-columns:1fr}.maths{grid-template-columns:1fr 1fr}.dark{padding:40px 24px;border-radius:24px}section{padding-block:50px}}
+@media (max-width:480px){.row2{grid-template-columns:1fr}.navcta{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><a class="logo" href="#"><div class="mk">&lt;<b>/</b>&gt;</div><span>Cut The Code</span></a><a class="navcta" href="https://whop.com/checkout/plan_ZpTUbGSfJq9AG">Get the free setup</a></nav>
+
+  <div class="hero" id="get">
+    <div>
+      <div class="eyebrow"><b>FREE</b> 10-page guide · 6 copy-paste prompts</div>
+      <h1>The Claude <mark>content machine</mark>: my entire setup.</h1>
+      <p class="sub">How one Claude skill writes, voices, animates, captions and posts short-form videos to Instagram, TikTok and YouTube Shorts. No editor, no timeline. The real system behind every Cut The Code video, with the tools, the costs and the exact prompts.</p>
+      <ul class="points">
+        <li><i>✓</i>The 8-step pipeline, idea → posted video</li>
+        <li><i>✓</i>Every tool and what it really costs</li>
+        <li><i>✓</i>6 prompts to make Claude build your own</li>
+      </ul>
+      <div class="proof"><span class="dot"></span>Every video on our page was made by this machine. Nobody edited them.</div>
+    </div>
+
+    <div class="formcard" aria-live="polite">
+      <div class="top"><div class="pdf" role="img" aria-label="The Claude Content Machine Setup cover"></div><div><h2>The Claude Content Machine Setup</h2><p>Free. In your inbox in under a minute.</p></div></div>
+      <div class="getbox">
+        <ul class="inside">
+          <li><i>✓</i>10-page PDF: the full setup</li>
+          <li><i>✓</i>6 copy-paste prompts</li>
+          <li><i>✓</i>Sent straight to your inbox</li>
+        </ul>
+        <a class="getbtn" id="getbtn" href="https://whop.com/checkout/plan_ZpTUbGSfJq9AG" rel="noopener">Get the free setup <span class="arr">→</span></a>
+        <p class="fine">Just your email. 10 seconds. £0, no card.</p>
+        <p class="consentnote">By getting the pack you'll also get emails from Cut The Code with prompts, builds and offers. Unsubscribe any time in one click. <a href="privacy.html" style="color:inherit">Privacy</a></p>
+      </div>
+    </div>
+  </div>
+
+  <section class="final">
+    <h2 class="big">Stop editing. <mark>Start shipping.</mark></h2>
+    <a href="#get">Get the free setup <span style="background:var(--marker);color:var(--ink);border-radius:8px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center">↑</span></a>
+  </section>
+
+  <footer>© Cut The Code · <a href="https://www.instagram.com/cuthecode" style="color:inherit">@cuthecode</a> · <a href="privacy.html" style="color:inherit">Privacy</a> · Independent, not affiliated with Anthropic. Claude is a trademark of Anthropic. Prices shown are typical market rates for similar services, not a promise of earnings.</footer>
+</div>
+
+<script>
+// Free pack checkout on Whop (collects email, delivers the PDF, then syncs to ActiveCampaign).
+// Pass UTM/source through so we can see which video or page sent each signup.
+(function(){var q=location.search;var a=document.querySelectorAll('a[href*="whop.com/checkout"]');if(q)a.forEach(function(x){x.href+=(x.href.indexOf('?')<0?'?':'&')+q.slice(1)})})();
+</script>
+</body>
+</html>
