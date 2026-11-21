@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;800&display=swap">
 <style>
-/* ---------- CONFIG: set KIT_FORM_ID in the script at the bottom ---------- */
+
 :root{--cobalt:#2340FF;--cobalt2:#5B74FF;--ink:#0B1033;--deep:#070A22;--paper:#F5F6FF;--bg:#F3F4FC;--marker:#FFE14D;--muted:#59607F;--line:#E2E5F5;--green:#18B46B;--red:#FF4D5E}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -40,6 +40,14 @@ h1 mark{background:var(--marker);color:var(--ink);padding:0 .12em;box-decoration
 .points i{flex:none;width:26px;height:26px;border-radius:8px;background:var(--cobalt);color:#fff;font-style:normal;font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:1px}
 .proof{display:flex;align-items:center;gap:12px;margin-top:28px;font-size:14px;color:var(--muted);font-weight:600}
 .proof .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(24,180,107,.15)}
+.getbox{padding:24px 26px 26px;display:grid;gap:16px}
+.inside{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-weight:600;font-size:16px}
+.inside i{font-style:normal;display:inline-flex;width:24px;height:24px;border-radius:7px;background:var(--marker);color:var(--ink);align-items:center;justify-content:center;font-weight:900;margin-right:10px;font-size:13px}
+.getbtn{font-weight:900;font-size:19px;border-radius:16px;padding:19px;background:var(--ink);color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .1s,background .15s}
+.getbtn:hover{background:#151C4D}.getbtn:active{transform:scale(.98)}
+.getbtn .arr{background:var(--marker);color:var(--ink);border-radius:8px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center}
+.getbox .fine{margin:-4px 0 0;text-align:center;font-weight:700;font-size:14px;color:var(--muted,#59607F)}
+.consentnote{margin:0;font-size:12.5px;line-height:1.5;color:#7A80A3;text-align:center}
 /* form card */
 .formcard{background:#fff;border-radius:28px;box-shadow:0 40px 90px rgba(25,35,110,.16),0 2px 6px rgba(25,35,110,.06);border:1px solid rgba(11,16,51,.06);overflow:hidden;position:relative}
 .formcard .top{background:linear-gradient(135deg,var(--cobalt),var(--cobalt2));color:#fff;padding:22px 26px;display:flex;align-items:center;gap:16px}
@@ -110,7 +118,7 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
 </head>
 <body>
 <div class="wrap">
-  <nav><a class="logo" href="#"><div class="mk">&lt;<b>/</b>&gt;</div><span>Cut The Code</span></a><a class="navcta" href="#get">Get the free pack</a></nav>
+  <nav><a class="logo" href="#"><div class="mk">&lt;<b>/</b>&gt;</div><span>Cut The Code</span></a><a class="navcta" href="https://whop.com/checkout/plan_NmtkUra7t72t6">Get the free pack</a></nav>
 
   <div class="hero" id="get">
     <div>
@@ -126,45 +134,16 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
     </div>
 
     <div class="formcard" aria-live="polite">
-      <div class="top"><div class="pdf" role="img" aria-label="The 10-Minute Website Prompt Pack cover"></div><div><h2>The 10-Minute Website Prompt Pack</h2><p>Free. Lands in your inbox in about a minute.</p></div></div>
-      <form id="leadform" novalidate>
-        <div class="row2">
-          <div><label for="fname">First name</label><input id="fname" name="first_name" type="text" autocomplete="given-name" required placeholder="e.g. Sam"></div>
-          <div><label for="email">Email</label><input id="email" name="email_address" type="email" autocomplete="email" required placeholder="you@email.com"></div>
-        </div>
-        <div>
-          <div class="lbl">What do you want to build first?</div>
-          <div class="chips" role="radiogroup" aria-label="What do you want to build first?">
-            <label class="chip"><input type="radio" name="goal" value="Websites for local businesses" checked><span>Websites for businesses</span></label>
-            <label class="chip"><input type="radio" name="goal" value="AI assistant or chatbot"><span>AI assistant / chatbot</span></label>
-            <label class="chip"><input type="radio" name="goal" value="Content for social media"><span>Social content</span></label>
-            <label class="chip"><input type="radio" name="goal" value="Something for my own business"><span>For my own business</span></label>
-            <label class="chip"><input type="radio" name="goal" value="Not sure yet"><span>Not sure yet</span></label>
-          </div>
-        </div>
-        <div>
-          <div class="lbl">Where are you at right now?</div>
-          <div class="chips" role="radiogroup" aria-label="Where are you at right now?">
-            <label class="chip"><input type="radio" name="stage" value="Never used Claude" checked><span>Never used Claude</span></label>
-            <label class="chip"><input type="radio" name="stage" value="Tried it a bit"><span>Tried it a bit</span></label>
-            <label class="chip"><input type="radio" name="stage" value="Use it but not making money"><span>Use it, not earning yet</span></label>
-            <label class="chip"><input type="radio" name="stage" value="Already selling services"><span>Already selling</span></label>
-          </div>
-        </div>
-        <div>
-          <label for="why">What would make this worth it for you? <small>(optional, I read every one)</small></label>
-          <textarea id="why" name="why" placeholder="e.g. I've tried 3 side hustles and want one that actually works around my 9–5…"></textarea>
-        </div>
-        <label class="consent"><input id="consent" type="checkbox" required><span>Send me the pack plus emails with prompts, builds and offers from Cut The Code. Unsubscribe any time, one click.</span></label>
-        <div class="err" id="err">Please add your first name, a valid email and tick the box.</div>
-        <button type="submit" id="submit">Send me the prompt pack <span class="arr">→</span></button>
-        <p class="fine">No spam. No selling your data. Just useful stuff.</p>
-      </form>
-      <div class="done" id="done">
-        <div class="tick">✓</div>
-        <h3>Check your inbox, <span id="dname">friend</span></h3>
-        <p>The pack is on its way (check promotions if you can't see it). Can't wait? Grab it instantly here:</p>
-        <a class="btn" href="https://whop.com/checkout/plan_NmtkUra7t72t6" target="_blank" rel="noopener">Instant download →</a>
+      <div class="top"><div class="pdf" role="img" aria-label="The 10-Minute Website Prompt Pack cover"></div><div><h2>The 10-Minute Website Prompt Pack</h2><p>Free. Download it in about 10 seconds.</p></div></div>
+      <div class="getbox">
+        <ul class="inside">
+          <li><i>✓</i>9-page PDF with the 6 prompts in order</li>
+          <li><i>✓</i>The message to send the business owner</li>
+          <li><i>✓</i>Instant download, plus a copy in your inbox</li>
+        </ul>
+        <a class="getbtn" id="getbtn" href="https://whop.com/checkout/plan_NmtkUra7t72t6" rel="noopener">Get the free pack <span class="arr">→</span></a>
+        <p class="fine">Just your email. 10 seconds. £0, no card.</p>
+        <p class="consentnote">By getting the pack you'll also get emails from Cut The Code with prompts, builds and offers. Unsubscribe any time in one click.</p>
       </div>
     </div>
   </div>
@@ -215,25 +194,9 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
 </div>
 
 <script>
-// ===== CONFIG: ActiveCampaign form "Landing page" (list: Cut The Code, tag: source-landing-page) =====
-const AC_ACTION = "https://crentstocks.activehosted.com/proc.php";
-const AC_FORM_ID = "1";
-const AC_FIELDS = { build_goal: "field[2]", stage: "field[3]", why: "field[4]" };
-const INSTANT_LINK = "https://whop.com/checkout/plan_NmtkUra7t72t6";
-// ============================================================================================
-const f=document.getElementById('leadform'),err=document.getElementById('err'),btn=document.getElementById('submit');
-f.addEventListener('submit',async e=>{
-  e.preventDefault();
-  const name=f.first_name.value.trim(),email=f.email_address.value.trim();
-  if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||!document.getElementById('consent').checked){err.style.display='block';return}
-  err.style.display='none';btn.disabled=true;btn.firstChild.textContent='Sending… ';
-  const body=new URLSearchParams({u:AC_FORM_ID,f:AC_FORM_ID,s:'',c:'0',m:'0',act:'sub',v:'2',firstname:name,email:email});
-  body.append(AC_FIELDS.build_goal,f.goal.value);body.append(AC_FIELDS.stage,f.stage.value);
-  if(f.why.value.trim())body.append(AC_FIELDS.why,f.why.value.trim());
-  try{await fetch(AC_ACTION,{method:'POST',body,mode:'no-cors'})}catch(_){ window.location.href=INSTANT_LINK; return }
-  document.getElementById('dname').textContent=name;
-  f.style.display='none';document.getElementById('done').style.display='block';
-});
+// Free pack checkout on Whop (collects email, delivers the PDF, then syncs to ActiveCampaign).
+// Pass UTM/source through so we can see which video or page sent each signup.
+(function(){var q=location.search;var a=document.querySelectorAll('a[href*="whop.com/checkout"]');if(q)a.forEach(function(x){x.href+=(x.href.indexOf('?')<0?'?':'&')+q.slice(1)})})();
 </script>
 </body>
 </html>
