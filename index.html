@@ -48,6 +48,7 @@ h1 mark{background:var(--marker);color:var(--ink);padding:0 .12em;box-decoration
 .getbtn .arr{background:var(--marker);color:var(--ink);border-radius:8px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center}
 .getbox .fine{margin:-4px 0 0;text-align:center;font-weight:700;font-size:14px;color:var(--muted,#59607F)}
 .consentnote{margin:0;font-size:12.5px;line-height:1.5;color:#7A80A3;text-align:center}
+.lmform{display:grid;gap:10px}.lmform input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:16px 18px;border-radius:14px;border:2px solid #D9DCF2;background:#fff;color:var(--ink);outline:none}.lmform input:focus{border-color:var(--cobalt)}.lmform button{border:0;cursor:pointer;width:100%;font-family:inherit}.lmerr{display:none;color:#D3263A;font-weight:700;margin:0;font-size:14px}.lmdone{display:none;background:#E7F8EF;color:#0E5A36;border-radius:14px;padding:14px 16px;font-size:15px;line-height:1.5}
 /* form card */
 .formcard{background:#fff;border-radius:28px;box-shadow:0 40px 90px rgba(25,35,110,.16),0 2px 6px rgba(25,35,110,.06);border:1px solid rgba(11,16,51,.06);overflow:hidden;position:relative}
 .formcard .top{background:linear-gradient(135deg,var(--cobalt),var(--cobalt2));color:#fff;padding:22px 26px;display:flex;align-items:center;gap:16px}
@@ -118,7 +119,7 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
 </head>
 <body>
 <div class="wrap">
-  <nav><a class="logo" href="#"><div class="mk">&lt;<b>/</b>&gt;</div><span>Cut The Code</span></a><a class="navcta" href="https://whop.com/checkout/plan_NmtkUra7t72t6">Get the free pack</a></nav>
+  <nav><a class="logo" href="#"><div class="mk">&lt;<b>/</b>&gt;</div><span>Cut The Code</span></a><a class="navcta" href="#get">Get the free pack</a></nav>
 
   <div class="hero" id="get">
     <div>
@@ -134,16 +135,21 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
     </div>
 
     <div class="formcard" aria-live="polite">
-      <div class="top"><div class="pdf" role="img" aria-label="The 10-Minute Website Prompt Pack cover"></div><div><h2>The 10-Minute Website Prompt Pack</h2><p>Free. In your inbox in under a minute.</p></div></div>
+      <div class="top"><div class="pdf" role="img" aria-label="The 10-Minute Website Prompt Pack cover"></div><div><h2>The 10-Minute Website Prompt Pack</h2><p>Free. Downloads instantly.</p></div></div>
       <div class="getbox">
         <ul class="inside">
           <li><i>✓</i>9-page PDF with the 6 prompts in order</li>
-          <li><i>✓</i>The message to send the business owner</li>
-          <li><i>✓</i>Sent straight to your inbox, plus a copy in Whop</li>
+          <li><i>✓</i>Downloads instantly, no account needed</li>
+          <li><i>✓</i>A copy lands in your inbox too</li>
         </ul>
-        <a class="getbtn" id="getbtn" href="https://whop.com/checkout/plan_NmtkUra7t72t6" rel="noopener">Get the free pack <span class="arr">→</span></a>
-        <p class="fine">Just your email. 10 seconds. £0, no card.</p>
-        <p class="consentnote">By getting the pack you'll also get emails from Cut The Code with prompts, builds and offers. Unsubscribe any time in one click. <a href="privacy.html" style="color:inherit">Privacy</a></p>
+        <form id="lm" class="lmform" novalidate>
+          <input id="lmemail" type="email" inputmode="email" autocomplete="email" required placeholder="Your email">
+          <button class="getbtn" type="submit" id="lmbtn">Get it free <span class="arr">→</span></button>
+        </form>
+        <p class="lmerr" id="lmerr">Please enter a valid email.</p>
+        <div class="lmdone" id="lmdone"><b>✓ Downloading now.</b> Your prompt pack is also on its way to your inbox. If it didn't open, <a href="prompt-pack.pdf" download>tap here</a>.</div>
+        <p class="fine">Just your email. No card, no account.</p>
+        <p class="consentnote">You'll also get emails from Cut The Code with prompts, builds and offers. Unsubscribe any time in one click. <a href="privacy.html" style="color:inherit">Privacy</a></p>
       </div>
     </div>
   </div>
@@ -194,9 +200,17 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
 </div>
 
 <script>
-// Free pack checkout on Whop (collects email, delivers the PDF, then syncs to ActiveCampaign).
-// Pass UTM/source through so we can see which video or page sent each signup.
-(function(){var q=location.search;var a=document.querySelectorAll('a[href*="whop.com/checkout"]');if(q)a.forEach(function(x){x.href+=(x.href.indexOf('?')<0?'?':'&')+q.slice(1)})})();
+(function(){
+var F=document.getElementById('lm'),E=document.getElementById('lmemail'),B=document.getElementById('lmbtn');
+F.addEventListener('submit',function(ev){ev.preventDefault();
+ var em=(E.value||'').trim(); if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){document.getElementById('lmerr').style.display='block';return}
+ document.getElementById('lmerr').style.display='none'; B.disabled=true;
+ var b=new URLSearchParams({u:'1',f:'1',s:'',c:'0',m:'0',act:'sub',v:'2',email:em});
+ try{fetch('https://crentstocks.activehosted.com/proc.php',{method:'POST',body:b,mode:'no-cors',keepalive:true})}catch(_){}
+ F.style.display='none'; document.getElementById('lmdone').style.display='block';
+ setTimeout(function(){var a=document.createElement('a');a.href='prompt-pack.pdf';a.download='';document.body.appendChild(a);a.click();},400);
+});
+})();
 </script>
 </body>
 </html>
