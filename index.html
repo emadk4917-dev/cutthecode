@@ -43,7 +43,7 @@ h1 mark{background:var(--marker);color:var(--ink);padding:0 .12em;box-decoration
 /* form card */
 .formcard{background:#fff;border-radius:28px;box-shadow:0 40px 90px rgba(25,35,110,.16),0 2px 6px rgba(25,35,110,.06);border:1px solid rgba(11,16,51,.06);overflow:hidden;position:relative}
 .formcard .top{background:linear-gradient(135deg,var(--cobalt),var(--cobalt2));color:#fff;padding:22px 26px;display:flex;align-items:center;gap:16px}
-.formcard .pdf{width:54px;height:66px;border-radius:10px;background:#fff;color:var(--red);font-weight:900;font-size:13px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;flex:none;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.formcard .pdf{width:54px;height:76px;border-radius:6px;background:url(prompt-pack-cover-1200.png) -24px -13px/102px 102px no-repeat;flex:none;box-shadow:0 8px 20px rgba(0,0,0,.25)}
 .formcard .top h2{margin:0;font-size:20px;font-weight:900;line-height:1.25}
 .formcard .top p{margin:2px 0 0;font-size:14px;opacity:.9;font-weight:600}
 form{padding:24px 26px 26px;display:grid;gap:18px}
@@ -126,7 +126,7 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
     </div>
 
     <div class="formcard" aria-live="polite">
-      <div class="top"><div class="pdf">PDF</div><div><h2>The 10-Minute Website Prompt Pack</h2><p>Free. Lands in your inbox in about a minute.</p></div></div>
+      <div class="top"><div class="pdf" role="img" aria-label="The 10-Minute Website Prompt Pack cover"></div><div><h2>The 10-Minute Website Prompt Pack</h2><p>Free. Lands in your inbox in about a minute.</p></div></div>
       <form id="leadform" novalidate>
         <div class="row2">
           <div><label for="fname">First name</label><input id="fname" name="first_name" type="text" autocomplete="given-name" required placeholder="e.g. Sam"></div>
