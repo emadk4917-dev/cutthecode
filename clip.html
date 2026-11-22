@@ -148,6 +148,13 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
         </form>
         <p class="lmerr" id="lmerr">Please enter a valid email.</p>
         <div class="lmdone" id="lmdone"><b>✓ Downloading now.</b> Your clipping guide is also on its way to your inbox. If it didn't open, <a href="clip-setup.pdf" download>tap here</a>.</div>
+        <div class="kitoffer" id="kitoffer" style="display:none;margin-top:4px;background:var(--ink);color:#fff;border-radius:18px;padding:20px 22px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--marker);font-weight:800">SKIP THE SETUP · ONE-TIME £27</div>
+          <div style="font-weight:900;font-size:21px;margin:8px 0 6px">Get the finished Clipping Agent Kit</div>
+          <div style="font-size:15px;line-height:1.5;color:#C9CFF5">The guide gives you the prompts. The kit gives you the <b style="color:#fff">working, tested scripts</b>: the moment finder (chat spikes + loudness + hype words), the vertical cutter with word-by-word captions, the payout tracker, and a CLAUDE.md so Claude Code runs it all with "run today's clips".</div>
+          <a href="https://whop.com/cutthecode/clipping-agent-kit-claude-code/" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;background:var(--marker);color:var(--ink);font-weight:900;text-decoration:none;border-radius:14px;padding:15px">Get the kit · £27 <span>→</span></a>
+          <div style="font-size:12px;color:#AEB4E0;margin-top:10px;text-align:center">Instant download. Authorised campaigns only; no earnings promised. Want it set up for you? <a href="https://whop.com/cutthecode/" style="color:#fff">Done-for-you £497</a></div>
+        </div>
         <p class="fine">Just your email. No card, no account.</p>
         <p class="consentnote">You'll also get emails from Cut The Code with prompts, builds and offers. Unsubscribe any time in one click. <a href="privacy.html" style="color:inherit">Privacy</a></p>
       </div>
@@ -170,7 +177,7 @@ F.addEventListener('submit',function(ev){ev.preventDefault();
  document.getElementById('lmerr').style.display='none'; B.disabled=true;
  var b=new URLSearchParams({u:'3',f:'3',s:'',c:'0',m:'0',act:'sub',v:'2',email:em});
  try{fetch('https://crentstocks.activehosted.com/proc.php',{method:'POST',body:b,mode:'no-cors',keepalive:true})}catch(_){}
- F.style.display='none'; document.getElementById('lmdone').style.display='block';
+ F.style.display='none'; document.getElementById('lmdone').style.display='block'; document.getElementById('kitoffer').style.display='block';
  setTimeout(function(){var a=document.createElement('a');a.href='clip-setup.pdf';a.download='';document.body.appendChild(a);a.click();},400);
 });
 })();
