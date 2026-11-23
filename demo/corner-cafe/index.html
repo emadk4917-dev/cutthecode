@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Corner Café · Swindon</title>
+<meta name="description" content="Proper coffee, all-day brunch and homemade cakes in Old Town, Swindon. Book a table at The Corner Café.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf5ec; --paper:#f4e9d8; --espresso:#2b1a12; --roast:#5a3424;
+    --terracotta:#c8553d; --sage:#7d8f69; --butter:#f2c46d; --muted:#7a6558;
+    --radius:22px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"DM Sans",system-ui,sans-serif;background:var(--cream);color:var(--espresso);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.05;letter-spacing:-.01em}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(251,245,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid #eadcc6}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:"Fraunces",serif;font-weight:800;font-size:20px;text-decoration:none}
+  .logo .cup{width:30px;height:30px;border-radius:50%;background:var(--terracotta);position:relative}
+  .logo .cup::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--cream)}
+  .links{display:flex;gap:26px;font-weight:500;font-size:15px}
+  .links a{text-decoration:none;opacity:.8}
+  .links a:hover{opacity:1}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--terracotta);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:999px;box-shadow:0 8px 20px -8px rgba(200,85,61,.7);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--espresso);box-shadow:none;border:2px solid var(--espresso)}
+  .btn.small{padding:10px 18px;font-size:14px}
+
+  /* hero */
+  .hero{padding:56px 0 70px;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .kicker{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;color:var(--roast);letter-spacing:.02em}
+  .kicker i{width:8px;height:8px;border-radius:50%;background:var(--sage);display:block}
+  .hero h1{font-size:clamp(46px,7vw,84px);font-weight:800;margin:18px 0 18px}
+  .hero h1 em{font-style:italic;padding-right:.12em;color:var(--terracotta);font-weight:700}
+  .hero p.lede{font-size:19px;color:var(--muted);max-width:30ch;margin-bottom:28px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .facts{display:flex;gap:22px;margin-top:30px;font-size:14px;color:var(--muted)}
+  .facts b{display:block;font-size:22px;color:var(--espresso);font-family:"Fraunces",serif}
+
+  /* illustrated cup */
+  .art{position:relative;aspect-ratio:1/1;max-width:440px;justify-self:center;width:100%}
+  .art .sun{position:absolute;inset:4%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f7d58e,var(--butter) 55%,#e9a94b)}
+  .art .saucer{position:absolute;left:12%;right:12%;bottom:16%;height:14%;border-radius:50%;background:#fff;box-shadow:0 18px 30px -12px rgba(43,26,18,.45)}
+  .art .mug{position:absolute;left:24%;right:24%;bottom:22%;height:38%;background:var(--terracotta);border-radius:12px 12px 44% 44%/12px 12px 60% 60%}
+  .art .mug::before{content:"";position:absolute;right:-17%;top:18%;width:28%;height:44%;border:14px solid var(--terracotta);border-left:none;border-radius:0 50% 50% 0}
+  .art .crema{position:absolute;left:24%;right:24%;bottom:56%;height:9%;border-radius:50%;background:radial-gradient(ellipse at 50% 50%,#e8c59a 0 30%,#a5673f 31% 60%,var(--roast) 61%)}
+  .art .steam{position:absolute;bottom:66%;width:10px;height:70px;border-radius:10px;background:linear-gradient(transparent,rgba(255,255,255,.85));animation:rise 3s ease-in-out infinite}
+  .art .s1{left:40%}.art .s2{left:50%;animation-delay:.8s;height:90px}.art .s3{left:60%;animation-delay:1.6s}
+  @keyframes rise{0%,100%{transform:translateY(8px) scaleY(.9);opacity:.2}50%{transform:translateY(-10px) scaleY(1.05);opacity:.9}}
+  .art .bean{position:absolute;width:44px;height:30px;border-radius:50%;background:var(--roast);transform:rotate(-30deg)}
+  .art .bean::after{content:"";position:absolute;left:48%;top:10%;bottom:10%;width:3px;border-radius:3px;background:#2b1a12}
+  .art .b1{left:2%;bottom:10%}.art .b2{right:4%;top:14%;transform:rotate(40deg)}.art .b3{right:0;bottom:30%;transform:rotate(10deg) scale(.8)}
+  .badge{position:absolute;left:0;top:6%;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 14px 30px -14px rgba(43,26,18,.4);font-size:13px;font-weight:700;transform:rotate(-4deg)}
+  .badge span{color:var(--terracotta)}
+
+  /* sections */
+  section{padding:80px 0}
+  .eyebrow{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--terracotta);margin-bottom:10px}
+  h2{font-size:clamp(36px,5vw,54px);font-weight:800;margin-bottom:14px}
+  .sub{color:var(--muted);max-width:52ch;font-size:17px}
+
+  /* menu */
+  #menu{background:var(--espresso);color:var(--cream)}
+  #menu .sub{color:#cdb8a6}
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+  .card{background:#3a251b;border-radius:var(--radius);padding:28px 26px}
+  .card h3{font-size:26px;margin-bottom:6px;display:flex;align-items:center;gap:12px}
+  .card h3 .dot{width:14px;height:14px;border-radius:50%;background:var(--butter)}
+  .card:nth-child(2) h3 .dot{background:var(--terracotta)}
+  .card:nth-child(3) h3 .dot{background:var(--sage)}
+  .card .note{font-size:14px;color:#cdb8a6;margin-bottom:18px}
+  .item{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-top:1px dashed rgba(251,245,236,.16)}
+  .item .name{font-weight:700}
+  .item .desc{display:block;font-size:13.5px;color:#cdb8a6;font-weight:400}
+  .item .fill{flex:1}
+  .item .price{font-family:"Fraunces",serif;font-weight:700;font-size:19px;color:var(--butter)}
+  .tag{display:inline-block;font-size:11px;font-weight:700;background:var(--sage);color:#fff;border-radius:6px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+
+  /* hours + map */
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px}
+  .hours{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:0 20px 40px -30px rgba(43,26,18,.4)}
+  .hours h3{font-size:26px;margin-bottom:14px}
+  .hours table{width:100%;border-collapse:collapse;font-size:16px}
+  .hours td{padding:11px 0;border-top:1px solid #f0e4d2}
+  .hours td:last-child{text-align:right;font-weight:700}
+  .hours tr.today td{color:var(--terracotta)}
+  .open-now{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-weight:700;color:var(--sage);font-size:14px}
+  .open-now i{width:9px;height:9px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 4px rgba(125,143,105,.25)}
+  .map{position:relative;border-radius:var(--radius);overflow:hidden;min-height:340px;background:#e9e1cf}
+  .map .road{position:absolute;background:#fff}
+  .map .r1{left:-10%;right:-10%;top:42%;height:22px;transform:rotate(-8deg)}
+  .map .r2{top:-10%;bottom:-10%;left:58%;width:18px;transform:rotate(12deg)}
+  .map .r3{left:-10%;right:30%;top:78%;height:12px;transform:rotate(4deg)}
+  .map .park{position:absolute;left:8%;top:8%;width:34%;height:26%;border-radius:18px;background:#c9d6b4}
+  .map .block{position:absolute;background:#ddd2bc;border-radius:8px}
+  .map .k1{right:8%;top:10%;width:22%;height:22%}.map .k2{left:10%;bottom:6%;width:28%;height:12%}.map .k3{right:10%;bottom:8%;width:20%;height:24%}
+  .pin{position:absolute;left:52%;top:30%;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center}
+  .pin .head{width:44px;height:44px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--terracotta);box-shadow:0 10px 20px -6px rgba(200,85,61,.8)}
+  .pin .head::after{content:"";position:absolute;inset:13px;border-radius:50%;background:#fff}
+  .map .label{position:absolute;left:16px;right:16px;bottom:16px;background:#fff;border-radius:16px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;box-shadow:0 10px 30px -14px rgba(43,26,18,.5)}
+  .map .label b{display:block;font-size:16px}
+
+  /* reviews */
+  #reviews{background:var(--paper)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+  .rev{background:var(--cream);border-radius:var(--radius);padding:26px}
+  .stars{color:var(--terracotta);letter-spacing:3px;font-size:18px}
+  .rev p{font-family:"Fraunces",serif;font-size:19px;line-height:1.35;margin:12px 0 18px}
+  .who{display:flex;align-items:center;gap:12px;font-size:14px}
+  .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;background:var(--sage)}
+  .rev:nth-child(2) .av{background:var(--terracotta)}.rev:nth-child(3) .av{background:var(--roast)}
+  .who span{display:block;color:var(--muted);font-size:13px}
+  .score{display:flex;align-items:center;gap:14px;margin-top:8px}
+  .score b{font-family:"Fraunces",serif;font-size:44px}
+
+  /* book */
+  #book .box{background:var(--terracotta);color:#fff;border-radius:32px;padding:56px 44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;position:relative;overflow:hidden}
+  #book .box::before{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.1)}
+  #book h2{color:#fff}
+  #book .sub{color:#ffe3d6}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative}
+  input,select{width:100%;padding:15px 16px;border-radius:14px;border:none;font:inherit;font-size:15px;background:#fff;color:var(--espresso)}
+  form .full{grid-column:1/-1}
+  form button{grid-column:1/-1;border:none;cursor:pointer;background:var(--espresso);color:#fff;font:inherit;font-weight:700;font-size:17px;padding:17px;border-radius:14px}
+  .thanks{display:none;grid-column:1/-1;background:rgba(255,255,255,.16);border-radius:14px;padding:14px;font-weight:700;text-align:center}
+
+  footer{padding:40px 0 50px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+  @media (max-width:820px){
+    .links{display:none}
+    .hero{padding:28px 0 40px}
+    .hero .wrap{grid-template-columns:1fr;gap:10px}
+    .art{max-width:320px;order:-1}
+    .hero p.lede{font-size:17px}
+    section{padding:58px 0}
+    .menu-grid,.rev-grid,.visit{grid-template-columns:1fr}
+    #book .box{grid-template-columns:1fr;padding:38px 24px;border-radius:26px}
+    .facts{gap:18px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#"><span class="cup"></span>The Corner Café</a>
+    <div class="links"><a href="#menu">Menu</a><a href="#visit">Visit</a><a href="#reviews">Reviews</a></div>
+    <a class="btn small" href="#book">Book a table</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker"><i></i>Old Town, Swindon · since 2014</span>
+      <h1>Proper coffee.<br><em>Slow</em> mornings.</h1>
+      <p class="lede">Locally roasted beans, all-day brunch and cakes baked every morning, two minutes from Wood Street.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Book a table →</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+      </div>
+      <div class="facts">
+        <div><b>4.8★</b>312 reviews</div>
+        <div><b>7:30am</b>open weekdays</div>
+        <div><b>Dog</b>friendly</div>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <div class="sun"></div>
+      <div class="bean b1"></div><div class="bean b2"></div><div class="bean b3"></div>
+      <div class="steam s1"></div><div class="steam s2"></div><div class="steam s3"></div>
+      <div class="saucer"></div><div class="mug"></div><div class="crema"></div>
+      <div class="badge">Fresh bake at <span>8am</span> daily</div>
+    </div>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="eyebrow">The menu</div>
+    <h2>Made here, every day.</h2>
+    <p class="sub">Everything's cooked to order. Ask about gluten-free and vegan swaps, we're always happy to help.</p>
+    <div class="menu-grid">
+      <div class="card">
+        <h3><span class="dot"></span>Coffee</h3>
+        <div class="note">Beans from a Wiltshire roastery</div>
+        <div class="item"><span class="name">Flat white</span><span class="fill"></span><span class="price">£3.40</span></div>
+        <div class="item"><span class="name">Oat latte</span><span class="fill"></span><span class="price">£3.70</span></div>
+        <div class="item"><span class="name">Cappuccino</span><span class="fill"></span><span class="price">£3.50</span></div>
+        <div class="item"><span class="name">Hot chocolate<span class="desc">with whipped cream</span></span><span class="fill"></span><span class="price">£3.60</span></div>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Brunch</h3>
+        <div class="note">Served all day, till 3pm</div>
+        <div class="item"><span class="name">The Full Corner<span class="desc">bacon, sausage, eggs, beans, toast</span></span><span class="fill"></span><span class="price">£10.95</span></div>
+        <div class="item"><span class="name">Smashed avo<span class="tag">V</span><span class="desc">sourdough, chilli, poached egg</span></span><span class="fill"></span><span class="price">£8.50</span></div>
+        <div class="item"><span class="name">Eggs Benedict<span class="desc">ham hock, hollandaise</span></span><span class="fill"></span><span class="price">£9.25</span></div>
+        <div class="item"><span class="name">Bacon bap</span><span class="fill"></span><span class="price">£5.50</span></div>
+      </div>
+      <div class="card">
+        <h3><span class="dot"></span>Cakes</h3>
+        <div class="note">Baked in our kitchen at 8am</div>
+        <div class="item"><span class="name">Lemon drizzle</span><span class="fill"></span><span class="price">£3.25</span></div>
+        <div class="item"><span class="name">Victoria sponge</span><span class="fill"></span><span class="price">£3.50</span></div>
+        <div class="item"><span class="name">Fruit scone<span class="desc">jam &amp; clotted cream</span></span><span class="fill"></span><span class="price">£3.95</span></div>
+        <div class="item"><span class="name">Brownie<span class="tag">GF</span></span><span class="fill"></span><span class="price">£3.00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="eyebrow">Visit us</div>
+    <h2>Opening hours</h2>
+    <p class="sub">14 Corner Street, Old Town, Swindon SN1 3EG. Free parking on Bath Road after 6pm.</p>
+    <div class="visit">
+      <div class="hours">
+        <h3>When we're open</h3>
+        <table>
+          <tr><td>Monday – Friday</td><td>7:30am – 5pm</td></tr>
+          <tr class="today"><td>Saturday</td><td>8am – 5pm</td></tr>
+          <tr><td>Sunday</td><td>9am – 3pm</td></tr>
+          <tr><td>Bank holidays</td><td>9am – 3pm</td></tr>
+        </table>
+        <div class="open-now"><i></i>Open now · kitchen till 3pm</div>
+      </div>
+      <div class="map" role="img" aria-label="Map showing The Corner Café in Old Town, Swindon">
+        <div class="park"></div><div class="block k1"></div><div class="block k2"></div><div class="block k3"></div>
+        <div class="road r1"></div><div class="road r2"></div><div class="road r3"></div>
+        <div class="pin"><div class="head"></div></div>
+        <div class="label"><div><b>The Corner Café</b>14 Corner St, SN1 3EG</div><a class="btn small" href="#">Directions</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="eyebrow">Reviews</div>
+    <h2>Locals love it.</h2>
+    <div class="score"><b>4.8</b><div><div class="stars">★★★★★</div><span class="sub">from 312 reviews</span></div></div>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">★★★★★</div><p>"Best flat white in Swindon, and the scones are ridiculous. Our Saturday ritual now."</p><div class="who"><div class="av">S</div><div><b>Sophie</b><span>Old Town</span></div></div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"The Full Corner sorted my hangover in about four minutes. Lovely staff too."</p><div class="who"><div class="av">J</div><div><b>James</b><span>Lawn</span></div></div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>"Brought the dog and the kids. Nobody minded either. Lemon drizzle is a must."</p><div class="who"><div class="av">P</div><div><b>Priya</b><span>Wroughton</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <div class="eyebrow" style="color:#ffe3d6">Book a table</div>
+        <h2>Save your spot.</h2>
+        <p class="sub">Weekends get busy. Book ahead and we'll have your table ready, high chairs included.</p>
+      </div>
+      <form onsubmit="event.preventDefault();this.querySelector('.thanks').style.display='block'">
+        <input class="full" placeholder="Your name" required>
+        <input type="date" aria-label="Date" required>
+        <select aria-label="Time"><option>9:00am</option><option>10:30am</option><option>12:00pm</option><option>1:30pm</option></select>
+        <select class="full" aria-label="Guests"><option>2 guests</option><option>3 guests</option><option>4 guests</option><option>5+ guests</option></select>
+        <button type="submit">Book a table</button>
+        <div class="thanks">Lovely! We'll text you to confirm.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>The Corner Café</b> · 14 Corner Street, Swindon SN1 3EG · 01793 000 000</div>
+    <div>A demo site by <a href="https://cutthecode.co.uk">Cut The Code</a>. Not a real café.</div>
+  </div>
+</footer>
+
+</body>
+</html>
