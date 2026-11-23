@@ -1,31 +1,45 @@
 <!doctype html>
-<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>You're in. One-time upgrade | Cut The Code</title>
 <meta name="robots" content="noindex">
-<link rel="icon" href="favicon.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800;900&display=swap">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0B1033">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;800&display=swap">
+<link rel="stylesheet" href="/site.css">
 <style>
-:root{--ink:#0B1033;--cobalt:#2340FF;--marker:#FFE14D;--bg:#F3F4FC;--muted:#59607F}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Inter,Helvetica,Arial,sans-serif}
-.wrap{max-width:720px;margin:0 auto;padding:28px 16px 64px}
-.ok{display:inline-flex;gap:8px;align-items:center;background:#E7F8EF;color:#0E7A47;font-weight:800;padding:8px 14px;border-radius:99px;font-size:15px}
-h1{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(36px,7vw,58px);line-height:1.1;margin:18px 0 8px}
-mark{background:var(--marker);color:var(--ink);padding:0 8px}
-.card{background:#fff;border-radius:24px;box-shadow:0 30px 70px rgba(25,35,110,.13);padding:26px;margin-top:22px}
-.price{display:flex;align-items:baseline;gap:12px;margin:6px 0 12px}
-.price b{font-family:Anton,sans-serif;font-size:52px;font-weight:400}
-.price s{color:var(--muted);font-size:22px}
-ul{padding:0;list-style:none;display:grid;gap:10px;margin:14px 0 20px}
-li{display:grid;grid-template-columns:26px 1fr;gap:8px}
-li::before{content:"✓";display:inline-flex;width:22px;height:22px;border-radius:6px;background:var(--marker);align-items:center;justify-content:center;font-weight:900;font-size:13px;margin-top:2px}
-.btn{display:flex;justify-content:center;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;font-weight:900;font-size:19px;padding:18px;border-radius:16px}
-.no{display:block;text-align:center;margin-top:14px;color:var(--muted);font-weight:600;font-size:15px}
-.fine{font-size:13px;color:var(--muted);margin-top:22px}
-</style></head><body><div class="wrap">
+.up{max-width:760px;margin:0 auto;padding:40px 0 30px}
+.ok{display:inline-flex;gap:8px;align-items:center;background:rgba(43,217,138,.14);border:1px solid rgba(43,217,138,.4);color:#C9F7DE;font-weight:800;padding:8px 14px;border-radius:99px;font-size:15px;line-height:1.35}
+.up h1{font-size:clamp(36px,6vw,60px);margin:20px 0 12px}
+.up .intro{color:var(--soft);font-size:18px;margin:0}
+.offer{position:relative;border-radius:28px;padding:30px;margin-top:100px}
+.offer .ctc{position:absolute;right:16px;top:-84px;width:96px;height:auto;filter:drop-shadow(0 16px 24px rgba(0,0,0,.45))}
+.price{display:flex;align-items:baseline;gap:12px;margin:0 0 6px}
+.price b{font-weight:900;font-size:60px;letter-spacing:-.04em;line-height:1;color:var(--yellow);text-shadow:0 0 30px rgba(255,225,77,.4)}
+.price s{color:var(--muted);font-size:24px;font-weight:700}
+.offer ul{padding:0;list-style:none;display:grid;gap:12px;margin:18px 0 24px}
+.offer li{display:grid;grid-template-columns:26px 1fr;gap:10px;color:#fff;font-weight:500}
+.offer li::before{content:"✓";display:inline-flex;width:24px;height:24px;border-radius:7px;background:var(--yellow);color:var(--navy);align-items:center;justify-content:center;font-weight:900;font-size:13px;margin-top:1px}
+.offer .btn{width:100%;font-size:19px;padding:18px}
+.no{display:block;text-align:center;margin-top:16px;color:var(--muted);font-weight:600;font-size:15px}
+.fine{font-size:13px;color:var(--muted);margin-top:24px;text-align:left}
+@media (max-width:640px){.up{padding-top:24px}.offer{padding:24px 18px;margin-top:84px}.offer .ctc{width:84px;top:-78px}}
+</style>
+</head>
+<body>
+<header class="ctc-nav"><div class="ctc-nav-in">
+  <a class="ctc-brand" href="/" aria-label="Cut The Code home"><img src="/img/ctc-head.png" width="36" height="36" alt=""><span>cutthecode<em>.co.uk</em></span></a>
+  <nav aria-label="Main"><a href="/#free">Free tools</a><a href="/#demo">Demo</a><a href="/websites">Websites</a><a href="/#pricing">Pricing</a></nav>
+</div></header>
+<main class="wrap"><div class="up">
 <span class="ok">✓ You're in: your Quickstart is on its way to your inbox</span>
 <h1>One-time offer: add the <mark>Agency Kit</mark> for £40</h1>
-<p>The Quickstart shows you how to build. The Agency Kit is how to turn it into paying clients: finding local businesses, the demo-first pitch, every script, pricing, delivery and monthly care. Normally £67. Because you just got the Quickstart, it's £40 more, on this page only.</p>
-<div class="card">
+<p class="intro">The Quickstart shows you how to build. The Agency Kit is how to turn it into paying clients: finding local businesses, the demo-first pitch, every script, pricing, delivery and monthly care. Normally £67. Because you just got the Quickstart, it's £40 more, on this page only.</p>
+<div class="offer glass">
+  <img class="ctc" src="/img/ctc-point.webp" width="267" height="480" alt="">
   <div class="price"><b>£40</b><s>£67</s></div>
   <ul>
     <li>30-page guide: find businesses, build the demo, pitch, price, deliver, monthly care</li>
@@ -34,8 +48,23 @@ li::before{content:"✓";display:inline-flex;width:22px;height:22px;border-radiu
     <li>Templates: client agreement, onboarding checklist, monthly report email, lead tracker</li>
     <li>A 30-day action plan</li>
   </ul>
-  <a class="btn" href="https://whop.com/checkout/plan_BtvDxoR2CEd9x">Add the Agency Kit for £40 →</a>
+  <a class="btn btn-y" href="https://whop.com/checkout/plan_BtvDxoR2CEd9x">Add the Agency Kit for £40 <span class="arr">→</span></a>
   <a class="no" href="https://www.cutthecode.co.uk">No thanks, I'll stick with the Quickstart</a>
 </div>
 <p class="fine">Prices in the kit are typical UK market rates, not a promise of earnings. What you make depends on your effort, skills and the clients you find. Cut The Code is independent and not affiliated with Anthropic. <a href="privacy.html">Privacy</a></p>
-</div></body></html>
+</div></main>
+
+<footer class="ctc-foot"><div class="ctc-foot-in">
+  <div class="ctc-foot-top">
+    <a class="ctc-brand" href="/" aria-label="Cut The Code home"><img src="/img/ctc-head.png" width="36" height="36" alt=""><span>cutthecode<em>.co.uk</em></span></a>
+    <div class="ctc-foot-links"><a href="/#free">Free tools</a><a href="/#demo">Demo</a><a href="/websites">Websites</a><a href="/#pricing">Pricing</a><a href="/privacy">Privacy</a></div>
+    <div class="ctc-social">
+      <a href="https://www.tiktok.com/@cutthecode" rel="noopener" aria-label="TikTok @cutthecode"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.3 6.3 0 1 0 5.3 6.2V8.6a7.7 7.7 0 0 0 4.4 1.4V6.7a4.4 4.4 0 0 1-4.4-4.4z"/></svg>TikTok</a>
+      <a href="https://www.instagram.com/cuthecode" rel="noopener" aria-label="Instagram @cuthecode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>Instagram</a>
+      <a href="https://www.youtube.com/@cutthecodeuk" rel="noopener" aria-label="YouTube @cutthecodeuk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.7 12 4.7 12 4.7s-6.8 0-8.5.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-4.8zM9.8 15.1V8.9l5.6 3.1z"/></svg>YouTube</a>
+    </div>
+  </div>
+  <p class="ctc-legal">© 2026 Cut The Code · Independent, not affiliated with Anthropic. Claude is a trademark of Anthropic.</p>
+</div></footer>
+</body>
+</html>
