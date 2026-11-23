@@ -14,9 +14,11 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.cutthecode.co.uk/og-skill.jpg">
-<link rel="icon" href="favicon.png">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0B1033">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;800&display=swap">
 <style>
 
 
@@ -138,10 +140,23 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
 @media (max-width:900px){.demo{grid-template-columns:1fr;gap:30px}.herohead .mascot{width:96px}}
 @media (max-width:480px){.herohead .mascot{width:76px}h1{font-size:40px}}
 </style>
+<link rel="stylesheet" href="/site.css">
+<style>
+/* skill page on the dark brand layer */
+.herohead .mascot{filter:drop-shadow(0 18px 28px rgba(0,0,0,.45))}
+.phone{border-color:#1A2154!important;box-shadow:0 40px 90px rgba(0,0,0,.5),0 0 90px rgba(59,91,255,.3)!important}
+.steps3 div{background:var(--glass)!important;border:1px solid var(--glass-b)!important;box-shadow:var(--shadow)}
+.steps3 b.n{background:var(--cobalt);box-shadow:0 0 16px rgba(59,91,255,.6)}
+.steps3 p{color:var(--soft)!important}.steps3 p strong{color:#fff!important}
+.steps3 code{background:rgba(3,5,20,.7)!important}
+</style>
 </head>
 <body>
+<header class="ctc-nav"><div class="ctc-nav-in">
+  <a class="ctc-brand" href="/" aria-label="Cut The Code home"><img src="/img/ctc-head.png" width="36" height="36" alt=""><span>cutthecode<em>.co.uk</em></span></a>
+  <nav aria-label="Main"><a href="/#free">Free tools</a><a href="/#demo">Demo</a><a href="/websites">Websites</a><a href="/#pricing">Pricing</a></nav><a class="ctc-cta" href="#get">Get the free skill</a>
+</div></header>
 <div class="wrap">
-  <nav><a class="logo" href="index.html"><div class="mk">&lt;<b>/</b>&gt;</div><span>Cut The Code</span></a><a class="navcta" href="#get">Get the free skill</a></nav>
 
   <div class="hero" id="get">
     <div>
@@ -197,8 +212,20 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
     <a href="#get">Get the free skill <span style="background:var(--marker);color:var(--ink);border-radius:8px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center">↑</span></a>
   </section>
 
-  <footer>© Cut The Code · <a href="https://www.instagram.com/cuthecode" style="color:inherit">@cuthecode</a> · <a href="privacy.html" style="color:inherit">Privacy</a> · Independent, not affiliated with Anthropic. Claude is a trademark of Anthropic. Free to use for your own and your clients' videos; please don't resell the skill.</footer>
-</div>
+  </div>
+
+<footer class="ctc-foot"><div class="ctc-foot-in">
+  <div class="ctc-foot-top">
+    <a class="ctc-brand" href="/" aria-label="Cut The Code home"><img src="/img/ctc-head.png" width="36" height="36" alt=""><span>cutthecode<em>.co.uk</em></span></a>
+    <div class="ctc-foot-links"><a href="/#free">Free tools</a><a href="/#demo">Demo</a><a href="/websites">Websites</a><a href="/#pricing">Pricing</a><a href="/privacy">Privacy</a></div>
+    <div class="ctc-social">
+      <a href="https://www.tiktok.com/@cutthecode" rel="noopener" aria-label="TikTok @cutthecode"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.3 6.3 0 1 0 5.3 6.2V8.6a7.7 7.7 0 0 0 4.4 1.4V6.7a4.4 4.4 0 0 1-4.4-4.4z"/></svg>TikTok</a>
+      <a href="https://www.instagram.com/cuthecode" rel="noopener" aria-label="Instagram @cuthecode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>Instagram</a>
+      <a href="https://www.youtube.com/@cutthecodeuk" rel="noopener" aria-label="YouTube @cutthecodeuk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.7 12 4.7 12 4.7s-6.8 0-8.5.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-4.8zM9.8 15.1V8.9l5.6 3.1z"/></svg>YouTube</a>
+    </div>
+  </div>
+  <p class="ctc-legal">© 2026 Cut The Code · Independent, not affiliated with Anthropic. Claude is a trademark of Anthropic. Free to use for your own and your clients' videos; please don't resell the skill.</p>
+</div></footer>
 
 <script>
 (function(){
