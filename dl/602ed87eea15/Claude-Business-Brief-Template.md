@@ -10,9 +10,10 @@
 **Where:** [area you cover, call-out fees]
 
 **Prices:**
-- [service]: £[price]
-- [service]: £[price]
-- [service]: £[price]
+
+- [service] · £[price]
+- [service] · £[price]
+- [service] · £[price]
 
 **Hours:** [days and times, and when you're closed]
 
@@ -27,3 +28,14 @@
 **Words I never use:** [e.g. pamper, magical, luxurious, seamless, elevate]
 
 **Never make up:** prices, dates, reviews or promises that aren't on this page. If something's missing, ask me.
+
+## Bonus: turn this brief into a website with Claude Code (the exact prompt from our video)
+1. Install Claude Code (you need Node.js 18 or newer and a paid Claude plan or an API key): `npm install -g @anthropic-ai/claude-code`
+2. Save your filled-in brief as `brief.md` in an empty folder. Open a terminal in that folder and type `claude`.
+3. Paste this prompt, exactly:
+
+> brief.md is the whole spec. Build index.html from it: a one-page site for this business, one file, no frameworks. Use only facts from the brief.
+
+4. Open `index.html` in your browser. **You still check it:** every price, date and promise against your brief, before anyone sees it.
+
+**Our run:** 25 Nov 2026, Claude Code (Opus 5.5). Our 22-line brief went in; a 215-line `index.html` came out in 30 seconds. We checked it before we used it.

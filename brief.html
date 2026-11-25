@@ -145,7 +145,7 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
     <div class="formcard">
       <div class="top"><div class="pdf" aria-hidden="true">PDF</div><div><h2>Business brief template (1 page)</h2><p>Free. No email needed.</p></div><img class="topctc" src="/img/ctc-point.webp" width="267" height="480" alt=""></div>
       <div class="getbox">
-        <ul class="inside"><li><i>✓</i>Fill in the [brackets], about 10 minutes</li><li><i>✓</i>Editable .md version to upload</li><li><i>✓</i>Where to put it, step by step</li></ul>
+        <ul class="inside"><li><i>✓</i>Fill in the [brackets], about 10 minutes</li><li><i>✓</i>Editable .md version to upload</li><li><i>✓</i>Where to put it, step by step</li><li><i>✓</i>The exact Claude Code prompt from our video</li></ul>
         <a class="getbtn" href="dl/602ed87eea15/Claude-Business-Brief-Template.pdf" target="_blank" rel="noopener">Download the PDF <span class="arr">↓</span></a>
         <p class="fine">No email, no card, no account.</p>
         <p class="fine" style="margin-top:6px;font-size:14px"><a href="dl/602ed87eea15/Claude-Business-Brief-Template.md" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline">Get the editable version (.md) to fill in and upload</a></p>
@@ -158,6 +158,13 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
     <h2 class="big">Fill it in → upload it → <mark>just chat</mark></h2>
     <p class="lead">One page, real prices, no [brackets] left. Then Claude has your real prices and hours to work from in every chat.</p>
     <div class="grid3"><div class="card"><div class="n">STEP 1</div><h3>Fill it in</h3><p>Open the .md file, fill in every [bracket] and delete what doesn't apply. Keep it to one page.</p></div><div class="card"><div class="n">STEP 2</div><h3>Upload it</h3><p>In Claude: Projects → + New Project → "+" under project knowledge → upload the file.</p><div class="prompt">Not in the project description.</div></div><div class="card"><div class="n">STEP 3</div><h3>Just chat</h3><p>Every chat in that project now starts from your real prices, hours and tone.</p></div></div>
+  </section>
+
+  <section id="prompt" style="padding-top:0">
+    <div class="kicker">// bonus: the prompt from our video</div>
+    <h2 class="big">Turn the brief into a website with <mark>Claude Code</mark></h2>
+    <p class="lead">Our run, 25 Nov 2026: a 22-line brief went in, and Claude Code wrote a 215-line one-page site in 30 seconds. You still check it before anyone sees it.</p>
+    <div class="grid3"><div class="card"><div class="n">STEP 1</div><h3>Install Claude Code</h3><p>Needs Node.js 18+ and a paid Claude plan or an API key.</p><div class="prompt">npm install -g @anthropic-ai/claude-code</div></div><div class="card"><div class="n">STEP 2</div><h3>Save brief.md</h3><p>Put your filled-in brief in an empty folder as <b>brief.md</b>. Open a terminal there and type <b>claude</b>.</p></div><div class="card"><div class="n">STEP 3</div><h3>Paste this prompt</h3><div class="prompt">brief.md is the whole spec. Build index.html from it: a one-page site for this business, one file, no frameworks. Use only facts from the brief.</div><p style="margin-top:10px">Then open index.html and check every price, date and promise.</p></div></div>
   </section>
 
   <section style="padding-top:0">
