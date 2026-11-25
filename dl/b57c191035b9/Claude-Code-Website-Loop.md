@@ -4,10 +4,11 @@ Free from Cut The Code · cutthecode.co.uk
 
 Based on Anthropic's own guide, "Best practices for Claude Code" (https://code.claude.com/docs/en/best-practices). Their advice, in short: tell Claude what it can't see (a spec), then **give Claude a check to run**, because "Claude stops when the work looks done", and if nothing tells it whether the work actually *is* done, you end up being the tester.
 
-This file has 3 parts:
+This file has 4 parts:
 1. **CLAUDE.md**, ready to paste into your project folder
 2. **The review prompt**
 3. **check.js**, the check itself (screenshots the page at phone size and tests it against your spec)
+4. **The booking test prompt**: Claude books a table on your page like a customer would, and fixes it until it passes
 
 ---
 
@@ -84,6 +85,16 @@ const { chromium } = require('playwright'), path = require('path');
   await b.close(); process.exit(fail ? 1 : 0);
 })();
 ```
+
+## 5. The booking test prompt (the one in the video)
+
+Got a booking form on the page? Make Claude book a table itself, like a customer, before it says done. Needs Playwright (same install as check.js). Swap the name, day, time and party size for your own.
+
+```text
+Now test the booking like a real customer would. Write book.js with Playwright: open index.html at 390px wide, fill in the booking form (name Sam, Saturday, 10:30, 4 people), press the button, check the confirmation appears with those details, and screenshot it as booked.png. Run node book.js. If anything fails, fix index.html and run it again until it passes. Tell me PASS or FAIL.
+```
+
+In our café demo it failed once, Claude fixed index.html, and the second run passed.
 
 ## What it caught on our demo bakery site (the run in the video)
 
