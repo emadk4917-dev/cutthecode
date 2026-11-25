@@ -1,10 +1,10 @@
-# TWINS: 5 paid apps with free open-source twins
+# TWINS: 10 paid apps with free open-source twins
 
 **From Cut The Code** · checked 25 Nov 2026
 
-Five apps people pay for every month, each with a free, open-source "twin" on GitHub. There's a setup prompt for each one that you can paste into Claude Code.
+Ten apps people pay for every month, each with a free, open-source "twin" on GitHub. Part 1 is five twins that mostly run on a small server. Part 2 is five that run on your own computer. There's a setup prompt for each one that you can paste into Claude Code.
 
-Star counts and last-commit dates come from the GitHub API (25 Nov 2026, 02:29 UTC). Prices come from each company's own pricing page and can change, so check before you cancel anything.
+Star counts and last-commit dates come from the GitHub API (25 Nov 2026: part 1 at 02:29 UTC, part 2 at 06:11 UTC). Prices come from each company's own pricing page and can change, so check before you cancel anything.
 
 | # | You pay for | Price | Free twin | GitHub repo | Stars | Licence | Needs a server? |
 |---|---|---|---|---|---|---|---|
@@ -83,6 +83,73 @@ On my server (ssh user@MY_SERVER), check which of these Docker apps have new rel
 For each one, read its release notes for breaking changes, back up its database first, then update it.
 Show me each command and wait for my OK.
 ```
+
+---
+
+# Part 2: 5 more twins that run on your own computer
+
+*Added 25 Nov 2026 for the Fri 27 Nov video. Stars, licences and last commits from the GitHub API (25 Nov 2026, 06:11 UTC).*
+
+These five don't need a server. They're apps (or a small tool) that run on your own laptop or desktop.
+
+| # | You pay for | Price | Free twin | GitHub repo | Stars | Licence | Runs on |
+|---|---|---|---|---|---|---|---|
+| 06 | Otter.ai (transcription) | $16.99/mo (Pro, billed monthly; ~$8.33/mo billed yearly) | **Buzz** | github.com/chidiwilliams/buzz | 23.1k | MIT | Your computer, offline (uses OpenAI's open Whisper models) |
+| 07 | remove.bg (background remover) | from $9/mo (40 credits) | **rembg** | github.com/danielgatis/rembg | 25.7k | MIT | Your computer (command line, Claude Code runs it for you) |
+| 08 | Adobe Lightroom (photo editor) | £11.99/mo (1TB plan, UK) | **darktable** | github.com/darktable-org/darktable | 13.5k | GPL-3.0 | Desktop app (Windows, Mac, Linux) |
+| 09 | YNAB (budgeting) | $14.99/mo ($109/yr) | **Actual** | github.com/actualbudget/actual | 30.4k | MIT | Desktop app, local-first |
+| 10 | Adobe Premiere Pro (video editor) | £21.98/mo (annual, billed monthly, UK) | **Shotcut** | github.com/mltframework/shotcut | 15.8k | GPL-3.0 | Desktop app (Windows, Mac, Linux) |
+
+## The honest catch (part 2)
+
+- **Your computer does the work.** Transcribing an hour of audio with Buzz, or removing 500 backgrounds with rembg, is slow on an old laptop. A newer machine (or a graphics card) makes a big difference.
+- **No cloud sync like the paid apps.** darktable, Shotcut and Buzz keep everything on the one computer. Actual can sync between devices, but only if you run its sync server yourself.
+- **They're not identical.** darktable has no phone app like Lightroom. Shotcut has fewer built-in effects than Premiere Pro. Actual's bank sync needs extra setup (and its sync server), so the simple way is to import a CSV export from your bank.
+- **Get them from the official repo.** Some of these have look-alike paid versions in app stores. Download from the GitHub releases page (or the project's own site, linked from the repo).
+
+## Setup prompts for Claude Code (part 2)
+
+Read each prompt before you paste it. Each one asks Claude Code to show you every command before it runs it.
+
+### 06 · Buzz (instead of Otter)
+
+```
+Install Buzz on this computer from the official releases page linked from github.com/chidiwilliams/buzz (not an app-store copy).
+Tell me which download matches my operating system, then walk me through installing it.
+Then show me how to transcribe [path to my audio file] with the "small" Whisper model and export it as a .txt and an .srt file.
+Show me each command before you run it.
+```
+
+### 07 · rembg (instead of remove.bg)
+
+```
+Install rembg on this computer, following the README at github.com/danielgatis/rembg. Use a Python virtual environment so it doesn't touch the rest of my system.
+Then remove the background from every photo in [./products] and save the results as PNGs in [./products-cutout].
+Show me each command before you run it, and open two of the results so I can check them.
+```
+
+### 08 · darktable (instead of Lightroom)
+
+```
+Help me install darktable on this computer from the official download linked from github.com/darktable-org/darktable.
+Then give me a 5-step beginner workflow: import a folder, crop, exposure, colour, export as JPEG. Use the real menu names from darktable's manual.
+```
+
+### 09 · Actual (instead of YNAB)
+
+```
+Help me install the Actual desktop app from the official releases linked from github.com/actualbudget/actual.
+Then set up a budget for me with these categories: [rent, food, transport, bills, fun, savings].
+Show me how to import a CSV export from my bank, and how to back up the budget file.
+```
+
+### 10 · Shotcut (instead of Premiere Pro)
+
+```
+Help me install Shotcut on this computer from the official download linked from github.com/mltframework/shotcut.
+Then give me the exact steps to make a 9:16 vertical video: new project at 1080x1920, import my clips from [folder], cut them, add a music track, add text, and export an MP4 for TikTok.
+```
+
 
 ## One rule for next time
 
