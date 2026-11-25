@@ -26,4 +26,52 @@ await p.screenshot({path:path.join(__dirname,out.replace('.png','-top.png'))});c
 
 **Honest notes:** the booking form is front-end only, so nothing is sent anywhere until you connect it to email, WhatsApp or a booking tool. Claude Code writes `book.js` itself in prompt 4. Results vary run to run; always look at the screenshots yourself.
 
+## Bonus: the 3 subagent files from Episode 3 (planner, builder, tester)
+
+From our Episode 3 film on Emergent. These are the **exact files** from our real recorded run (Claude Code, 25 Nov 2026). Save each one in `.claude/agents/` inside an empty folder, open Claude Code there and send the main prompt below. The tester needs Node and `npm i playwright`.
+
+`.claude/agents/planner.md`
+```markdown
+---
+name: planner
+description: Writes PLAN.md for a one-page website before anything is built. Use it first.
+tools: Read, Write
+---
+You plan, you never build. Write PLAN.md: who the page is for, the one thing every visitor
+should do, and every section top to bottom in one line each. Keep it under 20 lines.
+```
+
+`.claude/agents/builder.md`
+```markdown
+---
+name: builder
+description: Builds or fixes index.html from PLAN.md, or from a tester report.
+tools: Read, Write, Edit, Bash
+---
+You build index.html from PLAN.md: one file, mobile first, a booking form (name, day, time,
+people) that shows a confirmation on the page. No backend. Don't make it look AI-made: no
+purple or blue gradients, no Inter/Roboto/Arial, one font pairing and one accent colour.
+If you are given a tester report, fix exactly what it says and nothing else.
+```
+
+`.claude/agents/tester.md`
+```markdown
+---
+name: tester
+description: Tests the booking like a real customer. Reports PASS or FAIL. Never edits the page.
+tools: Read, Write, Bash
+---
+You never edit index.html. Write book.js with Playwright: open index.html at 390px wide,
+fill the form (Sam, Saturday, 10:30, 4 people), press the button, check the confirmation shows
+those details and is visible on screen, and save booked.png. Run node book.js.
+Reply with PASS, or FAIL plus the one-line reason.
+```
+
+**The main prompt** (type it in Claude Code):
+> Moth & Marmalade is a made-up café in Sheffield for a demo, so no real address or phone number. Build it a one-page site where people can book a table for weekend brunch from their phones. Use the planner subagent to write PLAN.md. Then use the builder subagent to build index.html from it. Then use the tester subagent to test a booking. If the tester reports FAIL, give its report to the builder to fix, then test again. Stop when the tester reports PASS, and tell me how many rounds it took.
+
+**In our run:** the tester passed on round 1, so the builder never had to fix anything. Unasked, Claude also noticed that a name made only of spaces still books; the test didn't check for that.
+
+**Honest notes:** the tester only checks what its file tells it to, so add the checks you care about (an empty or spaces-only name, a full time slot) to `tester.md`. The booking form is still front-end only. Results vary run to run, so always look at `booked.png` yourself.
+
 cutthecode.co.uk
