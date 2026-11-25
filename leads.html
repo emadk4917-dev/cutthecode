@@ -151,6 +151,33 @@ footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;c
         <p class="fine">No email, no card, no account.</p>
         <p class="fine" style="margin-top:6px;font-size:14px"><a href="dl/f98872cdbb0c/LEADS-Prompt.md" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline">Prefer plain text? Get the same pack as Markdown (.md)</a></p>
         <p class="fine" style="margin-top:2px;font-size:14px"><a href="dl/f98872cdbb0c/LEADS-files.zip" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline">Get the exact files we tested (.zip)</a></p>
+        <!-- ctc-next-step -->
+        <div class="nextstep" style="margin-top:18px;background:var(--ink);color:#fff;border-radius:18px;padding:18px 20px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--marker);font-weight:800">NEXT STEP · ONE-OFF £27</div>
+          <div style="font-weight:900;font-size:20px;margin:8px 0 6px">Build things people pay for</div>
+          <div style="font-size:15px;line-height:1.5;color:#C9CFF5">The <b style="color:#fff">Claude Code Quickstart</b>: set up in about 20 minutes, then build a business website, an AI chat assistant and a month of social content, with tested copy-paste prompts.</div>
+          <a href="https://whop.com/checkout/plan_jp4liKlhceyfI" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;background:var(--marker);color:var(--ink);font-weight:900;text-decoration:none;border-radius:14px;padding:15px">Get the Quickstart · £27 <span>→</span></a>
+          <div style="font-size:12px;color:#AEB4E0;margin-top:10px;text-align:center">One-off payment through Whop. No subscription, no earnings promised. New to Claude? <a href="/build" style="color:#fff">Start with the free 7-day plan</a>.</div>
+        </div>
+        <div class="nsbox" style="margin-top:16px">
+          <p class="fine" style="font-weight:800;margin:0 0 8px;text-align:left">Optional: get the next free pack by email. You'll start with our 10-Minute Website Prompt Pack.</p>
+          <form id="nsf" class="lmform" novalidate>
+            <input id="nse" type="email" inputmode="email" autocomplete="email" required placeholder="Your email" aria-label="Your email">
+            <button class="getbtn" type="submit" id="nsb">Send me new packs <span class="arr">→</span></button>
+          </form>
+          <p class="lmerr" id="nserr">Please enter a valid email.</p>
+          <div class="lmdone" id="nsdone"><b>✓ You're in.</b> The prompt pack is on its way to your inbox.</div>
+          <p class="consentnote">You'll get emails from Cut The Code with prompts, builds and offers. Unsubscribe any time in one click. <a href="privacy.html" style="color:inherit">Privacy</a></p>
+        </div>
+        <script>
+        (function(){var F=document.getElementById('nsf'),E=document.getElementById('nse'),B=document.getElementById('nsb');
+        F.addEventListener('submit',function(ev){ev.preventDefault();var em=(E.value||'').trim();
+         if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){document.getElementById('nserr').style.display='block';return}
+         document.getElementById('nserr').style.display='none';B.disabled=true;
+         var b=new URLSearchParams({u:'3',f:'3',s:'',c:'0',m:'0',act:'sub',v:'2',email:em});
+         try{fetch('https://crentstocks.activehosted.com/proc.php',{method:'POST',body:b,mode:'no-cors',keepalive:true})}catch(_){}
+         F.style.display='none';document.getElementById('nsdone').style.display='block';});})();
+        </script>
       </div>
     </div>
   </div>
