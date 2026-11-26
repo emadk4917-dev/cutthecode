@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PRICING: the free Claude Code skill that reviews your prices (command + prompt) | Cut The Code</title>
+<meta name="description" content="One command installs 53 free marketing skills into Claude Code. This is the exact prompt we used to run the pricing skill on our own offers, and the review it wrote.">
+<meta property="og:title" content="PRICING: the command + the exact prompt (free)">
+<meta property="og:description" content="One command installs 53 free marketing skills into Claude Code. This is the exact prompt we used to run the pricing skill on our own offers, and the review it wrote.">
+<meta property="og:image" content="https://www.cutthecode.co.uk/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.cutthecode.co.uk/pricing">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.cutthecode.co.uk/pricing">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0B1033">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;800&display=swap">
+<style>
+
+:root{--cobalt:#2340FF;--cobalt2:#5B74FF;--ink:#0B1033;--deep:#070A22;--paper:#F5F6FF;--bg:#F3F4FC;--marker:#FFE14D;--muted:#59607F;--line:#E2E5F5;--green:#18B46B;--red:#FF4D5E}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(35,64,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(35,64,255,.045) 1px,transparent 1px);background-size:56px 56px}
+a{color:var(--cobalt)}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.mono{font-family:'JetBrains Mono',monospace}
+/* nav */
+nav{padding-block:18px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.logo .mk{width:44px;height:44px;border-radius:12px;background:linear-gradient(145deg,#3352FF,#1B30D6);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:800;color:#fff;font-size:17px;letter-spacing:-2px}
+.logo .mk b{color:var(--marker)}
+.logo span{font-family:Anton,sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:1px}
+.navcta{font-weight:800;font-size:15px;background:var(--ink);color:#fff;text-decoration:none;padding:10px 18px;border-radius:99px}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start;padding-block:36px 70px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 14px 6px 8px;font-weight:700;font-size:14px;color:var(--muted)}
+.eyebrow b{background:var(--marker);color:var(--ink);border-radius:99px;padding:2px 10px;font-weight:900;font-size:12px;letter-spacing:1px}
+h1{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,6vw,80px);line-height:1.2;letter-spacing:.5px;margin:22px 0 0;text-wrap:balance}
+h1 mark{background:var(--marker);color:var(--ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.sub{font-size:20px;color:#3A4166;margin:22px 0 0;max-width:34em}
+.points{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.points li{display:flex;gap:12px;align-items:flex-start;font-weight:600}
+.points i{flex:none;width:26px;height:26px;border-radius:8px;background:var(--cobalt);color:#fff;font-style:normal;font-size:15px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.proof{display:flex;align-items:center;gap:12px;margin-top:28px;font-size:14px;color:var(--muted);font-weight:600}
+.proof .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(24,180,107,.15)}
+.getbox{padding:24px 26px 26px;display:grid;gap:16px}
+.inside{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-weight:600;font-size:16px}
+.inside i{font-style:normal;display:inline-flex;width:24px;height:24px;border-radius:7px;background:var(--marker);color:var(--ink);align-items:center;justify-content:center;font-weight:900;margin-right:10px;font-size:13px}
+.getbtn{font-weight:900;font-size:19px;border-radius:16px;padding:19px;background:var(--ink);color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .1s,background .15s}
+.getbtn:hover{background:#151C4D}.getbtn:active{transform:scale(.98)}
+.getbtn .arr{background:var(--marker);color:var(--ink);border-radius:8px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center}
+.getbox .fine{margin:-4px 0 0;text-align:center;font-weight:700;font-size:14px;color:var(--muted,#59607F)}
+.consentnote{margin:0;font-size:12.5px;line-height:1.5;color:#7A80A3;text-align:center}
+.lmform{display:grid;gap:10px}.lmform input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:16px 18px;border-radius:14px;border:2px solid #D9DCF2;background:#fff;color:var(--ink);outline:none}.lmform input:focus{border-color:var(--cobalt)}.lmform button{border:0;cursor:pointer;width:100%;font-family:inherit}.lmerr{display:none;color:#D3263A;font-weight:700;margin:0;font-size:14px}.lmdone{display:none;background:#E7F8EF;color:#0E5A36;border-radius:14px;padding:14px 16px;font-size:15px;line-height:1.5}
+/* form card */
+.formcard{background:#fff;border-radius:28px;box-shadow:0 40px 90px rgba(25,35,110,.16),0 2px 6px rgba(25,35,110,.06);border:1px solid rgba(11,16,51,.06);overflow:hidden;position:relative}
+.formcard .top{background:linear-gradient(135deg,var(--cobalt),var(--cobalt2));color:#fff;padding:22px 26px;display:flex;align-items:center;gap:16px}
+.formcard .pdf{width:54px;height:68px;border-radius:8px;background:var(--marker);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:800;font-size:13px;flex:none;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.warn{margin-top:22px;background:#FFF8D6;border:1px solid #F2DD7A;border-radius:16px;padding:14px 18px;font-size:15px;color:#3A4166}
+.warn b{color:#0B1033}
+.warn a{color:#2340FF;font-weight:700}
+.formcard .top h2{margin:0;font-size:20px;font-weight:900;line-height:1.25}
+.formcard .top p{margin:2px 0 0;font-size:14px;opacity:.9;font-weight:600}
+form{padding:24px 26px 26px;display:grid;gap:18px}
+label,.lbl{font-weight:800;font-size:14px;display:block;margin-bottom:8px}
+.lbl small,label small{font-weight:600;color:var(--muted)}
+input[type=text],input[type=email],textarea{width:100%;font:inherit;font-size:16px;padding:14px 16px;border:2px solid var(--line);border-radius:14px;background:#FAFBFF;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
+input:focus,textarea:focus{border-color:var(--cobalt);box-shadow:0 0 0 4px rgba(35,64,255,.12)}
+textarea{min-height:84px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;border:2px solid var(--line);background:#FAFBFF;border-radius:99px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;user-select:none;transition:all .12s}
+.chip input:checked+span{border-color:var(--cobalt);background:#EEF1FF;color:var(--cobalt)}
+.chip input:focus-visible+span{box-shadow:0 0 0 4px rgba(35,64,255,.2)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);font-weight:500;line-height:1.45}
+.consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--cobalt);flex:none}
+button{font:inherit;font-weight:900;font-size:18px;border:0;border-radius:16px;padding:18px;background:var(--ink);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .1s,background .15s}
+button:hover{background:#151C4D}button:active{transform:scale(.98)}
+button .arr{background:var(--marker);color:var(--ink);border-radius:8px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center}
+.fine{font-size:12px;color:var(--muted);text-align:center;margin:-6px 0 0}
+.err{color:var(--red);font-weight:700;font-size:14px;display:none}
+.done{display:none;padding:34px 28px 30px;text-align:center}
+.done .tick{width:72px;height:72px;border-radius:50%;background:var(--green);color:#fff;font-size:38px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.done h3{font-size:26px;margin:0 0 8px;font-weight:900}
+.done p{margin:0 0 18px;color:#3A4166}
+.done a.btn{display:inline-flex;align-items:center;gap:10px;background:var(--cobalt);color:#fff;text-decoration:none;font-weight:900;padding:14px 22px;border-radius:14px}
+/* sections */
+section{padding-block:70px}
+.kicker{font-family:'JetBrains Mono',monospace;font-weight:800;font-size:13px;letter-spacing:3px;color:var(--cobalt);text-transform:uppercase}
+h2.big{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(36px,4.6vw,58px);line-height:1.1;margin:10px 0 0;text-wrap:balance}
+h2.big mark{background:var(--marker);padding:0 .1em}
+.lead{font-size:19px;color:#3A4166;max-width:40em;margin:16px 0 0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.card{background:#fff;border-radius:22px;border:1px solid var(--line);padding:26px;box-shadow:0 14px 34px rgba(25,35,110,.07)}
+.card .n{font-family:'JetBrains Mono',monospace;font-weight:800;color:var(--cobalt);font-size:14px}
+.card h3{margin:8px 0 6px;font-size:20px;font-weight:900}
+.card p{margin:0;color:#3A4166;font-size:16px}
+.prompt{margin-top:14px;background:var(--ink);color:#E6E9FF;border-radius:14px;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.55}
+.prompt b{color:var(--marker)}
+/* dark band */
+.dark{background:radial-gradient(ellipse at 75% 30%,#1E2C9E 0%,#0E1550 40%,var(--deep) 80%);color:var(--paper);border-radius:32px;padding:60px 54px;position:relative;overflow:hidden}
+.dark .kicker{color:var(--marker)}
+.dark .lead{color:#C9CFF5}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+.vs div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:22px 24px}
+.vs h4{margin:0 0 10px;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:2px;color:#AEB4E0}
+.vs ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.vs .us h4{color:var(--marker)}
+.maths{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.maths div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center}
+.maths b{display:block;font-family:Anton,sans-serif;font-weight:400;font-size:40px;line-height:1.1;color:var(--cobalt)}
+.maths span{font-size:14px;color:var(--muted);font-weight:700}
+.small{font-size:13px;color:var(--muted);margin-top:14px}
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-top:12px}
+summary{font-weight:800;cursor:pointer}
+details p{margin:10px 0 0;color:#3A4166}
+.final{text-align:center}
+.final a{display:inline-flex;margin-top:26px;background:var(--ink);color:#fff;text-decoration:none;font-weight:900;font-size:18px;padding:18px 28px;border-radius:16px;gap:10px;align-items:center}
+footer{padding-block:40px 60px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:26px;padding-block:20px 50px}.points,.proof{display:none}.sub{font-size:17px;margin-top:14px}.grid3{grid-template-columns:1fr}.vs{grid-template-columns:1fr}.maths{grid-template-columns:1fr 1fr}.dark{padding:40px 24px;border-radius:24px}section{padding-block:50px}}
+@media (max-width:480px){.row2{grid-template-columns:1fr}.navcta{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<header class="ctc-nav"><div class="ctc-nav-in">
+  <a class="ctc-brand" href="/" aria-label="Cut The Code home"><img src="/img/ctc-head.png" width="36" height="36" alt=""><span>cutthecode<em>.co.uk</em></span></a>
+  <nav aria-label="Main"><a href="/#free">Free tools</a><a href="/#demo">Demo</a><a href="/websites">Websites</a><a href="/#pricing">Pricing</a></nav><a class="ctc-cta" href="#get">Get it free</a>
+</div></header>
+<div class="wrap">
+
+  <div class="hero" id="get">
+    <div>
+      <div class="eyebrow"><b>FREE</b> 1-page guide · Claude Code</div>
+      <h1>Let a free skill review your prices: <mark>the command + the exact prompt</mark>.</h1>
+      <p class="sub">One line installs 53 free marketing skills. One prompt runs the pricing skill on your offers and writes 3 changes, its reasoning, and one thing to leave alone.</p>
+      <ul class="points"><li><i>✓</i>The install command and the exact prompt</li><li><i>✓</i>2 follow-up prompts to test the changes</li><li><i>✓</i>The real review it wrote on our offers</li></ul>
+      <div class="proof"><span class="dot"></span>Run in Claude Code on 26 Nov 2026 on the text of our live offer pages</div>
+    </div>
+
+    <div class="formcard">
+      <div class="top"><div class="pdf" aria-hidden="true">PDF</div><div><h2>PRICING guide + the review it wrote for us</h2><p>Free. No email needed.</p></div><img class="topctc" src="/img/ctc-point.webp" width="267" height="480" alt=""></div>
+      <div class="getbox">
+        <ul class="inside"><li><i>✓</i>The one-line install</li><li><i>✓</i>The prompt, ready to paste</li><li><i>✓</i>Our real pricing-review.md, word for word</li></ul>
+        <a class="getbtn" href="dl/8e3406305b1b/PRICING-Prompt.pdf" target="_blank" rel="noopener">Download the PDF <span class="arr">↓</span></a>
+        <p class="fine">No email, no card, no account.</p>
+        <p class="fine" style="margin-top:6px;font-size:14px"><a href="dl/8e3406305b1b/PRICING-Prompt.md" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline">Prefer plain text? Get the same pack as Markdown (.md)</a></p>
+        <p class="fine" style="margin-top:2px;font-size:14px"><a href="dl/8e3406305b1b/PRICING-files.zip" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline">Get the exact files we tested (.zip)</a></p>
+        <!-- ctc-next-step -->
+        <div class="nextstep" style="margin-top:18px;background:var(--ink);color:#fff;border-radius:18px;padding:18px 20px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:var(--marker);font-weight:800">NEXT STEP · ONE-OFF £27</div>
+          <div style="font-weight:900;font-size:20px;margin:8px 0 6px">Build things people pay for</div>
+          <div style="font-size:15px;line-height:1.5;color:#C9CFF5">The <b style="color:#fff">Claude Code Quickstart</b>: set up in about 20 minutes, then build a business website, an AI chat assistant and a month of social content, with tested copy-paste prompts.</div>
+          <a href="https://whop.com/checkout/plan_jp4liKlhceyfI" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;background:var(--marker);color:var(--ink);font-weight:900;text-decoration:none;border-radius:14px;padding:15px">Get the Quickstart · £27 <span>→</span></a>
+          <div style="font-size:12px;color:#AEB4E0;margin-top:10px;text-align:center">One-off payment through Whop. No subscription, no earnings promised. New to Claude? <a href="/build" style="color:#fff">Start with the free 7-day plan</a>.</div>
+        </div>
+        <div class="nsbox" style="margin-top:16px">
+          <p class="fine" style="font-weight:800;margin:0 0 8px;text-align:left">Optional: get the next free pack by email. You'll start with our 10-Minute Website Prompt Pack.</p>
+          <form id="nsf" class="lmform" novalidate>
+            <input id="nse" type="email" inputmode="email" autocomplete="email" required placeholder="Your email" aria-label="Your email">
+            <button class="getbtn" type="submit" id="nsb">Send me new packs <span class="arr">→</span></button>
+          </form>
+          <p class="lmerr" id="nserr">Please enter a valid email.</p>
+          <div class="lmdone" id="nsdone"><b>✓ You're in.</b> The prompt pack is on its way to your inbox.</div>
+          <p class="consentnote">You'll get emails from Cut The Code with prompts, builds and offers. Unsubscribe any time in one click. <a href="privacy.html" style="color:inherit">Privacy</a></p>
+        </div>
+        <script>
+        (function(){var F=document.getElementById('nsf'),E=document.getElementById('nse'),B=document.getElementById('nsb');
+        F.addEventListener('submit',function(ev){ev.preventDefault();var em=(E.value||'').trim();
+         if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){document.getElementById('nserr').style.display='block';return}
+         document.getElementById('nserr').style.display='none';B.disabled=true;
+         var b=new URLSearchParams({u:'3',f:'3',s:'',c:'0',m:'0',act:'sub',v:'2',email:em});
+         try{fetch('https://crentstocks.activehosted.com/proc.php',{method:'POST',body:b,mode:'no-cors',keepalive:true})}catch(_){}
+         F.style.display='none';document.getElementById('nsdone').style.display='block';});})();
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <p class="small">Marketing Skills is by coreyhaines31 (MIT licence). Cut The Code isn't affiliated. The review is advice from how offers are built, not from sales data: test before you change prices.</p>
+
+  <section>
+    <div class="kicker">// what's inside</div>
+    <h2 class="big">Install → <mark>review</mark> → test</h2>
+    <p class="lead">The skill gives you a reasoned second opinion in a minute. Your sales numbers decide what stays.</p>
+    <div class="grid3"><div class="card"><div class="n">STEP 1</div><h3>Install the skills</h3><p>In your project folder, then restart Claude Code.</p><div class="prompt">npx skills add coreyhaines31/marketingskills -a claude-code</div></div><div class="card"><div class="n">STEP 2</div><h3>Write offers.md</h3><p>Your prices, what's included, and any sales numbers you have.</p></div><div class="card"><div class="n">STEP 3</div><h3>Paste the prompt</h3><p>It writes pricing-review.md.</p><div class="prompt">Use the pricing skill on offers.md, our real offers. Give me the 3 changes most likely to raise revenue, with the reasoning, and one thing you'd leave alone. Save it to pricing-review.md.</div></div></div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="kicker">// questions</div>
+    <details><summary>Is it free?</summary><p>Yes. The skills are open source (MIT). You need Claude Code.</p></details><details><summary>Will it change my prices?</summary><p>No. It writes a review file. You decide.</p></details><details><summary>Did you make the changes?</summary><p>Not yet. Without sales data, the review itself says to test them on new buyers first.</p></details>
+    <details><summary>Are you affiliated with Claude Code or Anthropic?</summary><p>No. Cut The Code is independent, and neither Claude Code nor Anthropic has reviewed or endorsed this pack. Claude is a trademark of Anthropic.</p></details>
+  </section>
+
+  <section class="final">
+    <h2 class="big">A second opinion on your prices. <mark>In a minute.</mark></h2>
+    <a href="dl/8e3406305b1b/PRICING-Prompt.pdf" target="_blank" rel="noopener">Download the free PDF <span style="background:var(--marker);color:var(--ink);border-radius:8px;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center">↓</span></a>
+  </section>
+
+  </div>
+
+<footer class="ctc-foot"><div class="ctc-foot-in">
+  <div class="ctc-foot-top">
+    <a class="ctc-brand" href="/" aria-label="Cut The Code home"><img src="/img/ctc-head.png" width="36" height="36" alt=""><span>cutthecode<em>.co.uk</em></span></a>
+    <div class="ctc-foot-links"><a href="/#free">Free tools</a><a href="/#demo">Demo</a><a href="/websites">Websites</a><a href="/#pricing">Pricing</a><a href="/privacy">Privacy</a></div>
+    <div class="ctc-social">
+      <a href="https://www.tiktok.com/@cutthecode" rel="noopener" aria-label="TikTok @cutthecode"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.3v13.2a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9a6.3 6.3 0 1 0 5.3 6.2V8.6a7.7 7.7 0 0 0 4.4 1.4V6.7a4.4 4.4 0 0 1-4.4-4.4z"/></svg>TikTok</a>
+      <a href="https://www.instagram.com/cuthecode" rel="noopener" aria-label="Instagram @cuthecode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>Instagram</a>
+      <a href="https://www.youtube.com/@cutthecodeuk" rel="noopener" aria-label="YouTube @cutthecodeuk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.7 12 4.7 12 4.7s-6.8 0-8.5.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-4.8zM9.8 15.1V8.9l5.6 3.1z"/></svg>YouTube</a>
+    </div>
+  </div>
+  <p class="ctc-legal">© 2026 Cut The Code · Independent, not affiliated with Anthropic. Claude is a trademark of Anthropic. Prices shown are typical market rates for similar services, not a promise of earnings.</p>
+</div></footer>
+</body>
+</html>
