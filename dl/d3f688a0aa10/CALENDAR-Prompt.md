@@ -25,7 +25,7 @@ Open Claude Code in that folder and paste:
 ## The honest catch
 
 - **It only drafts.** It reads the file and writes a plan. Nothing is declined or sent until you do it.
-- The week in the video is a made-up sample. Your calendar export holds real names and details: keep it on your own machine.
+- The week in the video is a made-up sample. Your export holds real names and details, and Claude Code sends what it reads to Claude: remove anything you would rather not share first.
 - It only knows what's in the invites. A meeting with no agenda might still matter to someone; ask before you cut it.
 
 More free Claude Code guides: cutthecode.co.uk
